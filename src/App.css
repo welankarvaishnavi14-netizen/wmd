@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #b71c1c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+}
+
+nav ul li a:hover {
+    color: #ffcccc;
+}
+
+/* Login Button */
+
+.login-btn {
+    background: white;
+    color: #b71c1c;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+}
+
+.hero-content p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.hero-content button {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hero-content button:hover {
+    background: #c62828;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 70px 8%;
+}
+
+section h2 {
+    text-align: center;
+    color: #b71c1c;
+    margin-bottom: 35px;
+    font-size: 35px;
+}
+
+/* ================= MOVIES ================= */
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    transition: .3s;
+    text-align: center;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    margin: 15px 0 10px;
+}
+
+.movie-card p {
+    color: #666;
+}
+
+.movie-card button {
+    margin: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #b71c1c;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.movie-card button:hover {
+    background: #8e0000;
+}
+
+/* ================= EVENTS ================= */
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+}
+
+.event-card button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #b71c1c;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.event-card button:hover {
+    background: #8e0000;
+}
+
+/* ================= OFFERS ================= */
+
+#offers {
+    background: #fff3cd;
+    text-align: center;
+}
+
+/* ================= CONTACT ================= */
+
+#contact {
+    background: #ececec;
+    text-align: center;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ================= LOGIN POPUP ================= */
+
+.popup {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    animation: popup .3s;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close Button */
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Tabs */
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    font-size: 16px;
+}
+
+.tabs .active {
+    background: #b71c1c;
+    color: white;
+}
+
+/* Forms */
+
+#loginForm,
+#signupForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm input,
+#signupForm input,
+#signupForm select {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Form Buttons */
+
+#loginForm button,
+#signupForm button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #b71c1c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#loginForm button:hover,
+#signupForm button:hover {
+    background: #8e0000;
+}
+
+/* Error Message */
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Password Message */
+
+small {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* ================= HELLO USER ================= */
+
+.hello-user {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    background: white;
+}
+
+/* ================= PROFILE ================= */
+
+#userSection {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-btn {
+    background: white;
+    color: #b71c1c;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+}
+
+.profile-popup {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    background: white;
+    color: #333;
+    padding: 20px;
+    width: 240px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.profile-popup h3 {
+    margin-bottom: 15px;
+    color: #b71c1c;
+}
+
+.profile-popup p {
+    margin: 10px 0;
+}
+
+/* Logout */
+
+.logout-btn {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #c62828;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .popup-content {
+        width: 90%;
+    }
+}
+.save-btn {
+    background: #b71c1c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.save-btn:hover {
+    background: #8e0000;
+}
+
+.booking,
+.ticket {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+.booking input {
+    padding: 10px;
+    margin: 5px;
+}
+
+.booking button {
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+.ticket {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-popup {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.profile-ticket {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.deleted-ticket {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.deleted-ticket button {
+    display: none;
+}
